@@ -10,6 +10,8 @@ describe('Create `index` view', () => {
       ejs.compile(file);
     } catch (err) {
       assert(err.code !== 'ENOENT', 'The `index.ejs` view file does not exist.');
+      console.log(err.message)
+      console.log('is logging working?')
       const errorMessage = err.message.substring(0, err.message.indexOf('compiling ejs'));
       assert(err.message.indexOf('compiling ejs') < -1, ` ${errorMessage}Error compiling index.ejs`);
     }
